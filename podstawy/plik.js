@@ -9,3 +9,5 @@ numerbuta = parseInt(numerbuta, 10);
 document.write("Witaj " + firstname + "!");
 document.write(", " +lastname)
 document.write(", " + numerbuta);
+
+//https://github.com/przemjan/JS_podstawy.git
