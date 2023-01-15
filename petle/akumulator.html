@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS: akumulator</title>
+    <script>
+        let sumaWyplat = 0, wyplata = 1;
+
+        for (let i = 0; i < 100; i++ ) {
+            document.write("W dniu " + i + " pensja wynosi " + wyplata + "zł."+"<br/>");
+
+            //wyplata = wyplata+1;
+            sumaWyplat += wyplata;
+        }
+
+        document.write("W sumie pracownik zarobił " + sumaWyplat + "zł");
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
