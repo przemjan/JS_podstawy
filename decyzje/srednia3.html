@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS zagnieżdżone instrukcje if-else</title>
+    <script>
+        let ocena1,  ocena2;
+        let iloscOcen = 2;
+        let srednia;
+
+        ocena1 = prompt("Podaj ocenę1 ", "0");
+        ocena1 = parseInt(ocena1, 10);
+        ocena2 = prompt("Podaj ocenę2 ", "0");
+        ocena2 = parseInt(ocena2, 10);
+
+        srednia = (ocena1 + ocena2) / iloscOcen;
+
+        if(srednia >= 2) {
+            if(srednia >=3 ) {
+                if(srednia >=4 ) {
+                    if(srednia >=5 ) {
+                        if(srednia >=6 ) {
+                            document.write("Świetnie");
+                        }
+                        else {
+                            document.write("Bardzo dobrze");
+                        }
+                    }
+                    else {
+                        document.write("Dobrze");
+                    }
+                }
+                else {
+                    document.write("Średnio");
+                }
+            }
+            else {
+                document.write("kiepsko");
+            }
+        }
+        else {
+            document.write("Bardzo źle");
+        }
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

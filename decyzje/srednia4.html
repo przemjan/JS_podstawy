@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS  instrukcja if else if </title>
+    <script>
+        let ocena1 = 2,  ocena2 = 2;
+        let iloscOcen = 2;
+        let srednia;
+
+        srednia = (ocena1 + ocena2) / iloscOcen;
+        
+        if (srednia >=6) {
+            document.write("Świetnie: " + srednia);
+        }
+        else if (srednia > 5) {
+            document.write("Bardzo dobrze: " + srednia);
+        }
+        else if (srednia > 4) {
+            document.write("Dobrze: " + srednia);
+        }
+        else if (srednia > 3) {
+            document.write("Średnio: " + srednia);
+        }
+        else if (srednia >= 2) {
+            document.write("kiepsko: " + srednia);
+        }
+        else if(srednia < 2) {
+            document.write("Bardzo zle: " + srednia);
+        }
+        else {
+            document.write("Nieprzewidziane dane: błąd " );
+        }
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

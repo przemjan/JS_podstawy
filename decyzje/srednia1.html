@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS instrukcja if</title>
+    <script>
+        let ocena1,  ocena2;
+        let iloscOcen = 2;
+        let srednia;
+
+        ocena1 = prompt("Podaj ocenę1 ", "0");
+        ocena1 = parseInt(ocena1, 10);
+        ocena2 = prompt("Podaj ocenę2 ", "0");
+        ocena2 = parseInt(ocena2, 10);
+
+        srednia = (ocena1 + ocena2) / iloscOcen;
+
+        if (srednia ===  5) {
+            document.write("Świetnie!");
+        }
+
+        if (srednia <= 1){
+            document.write("Niedobrze! " + srednia);
+        }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
