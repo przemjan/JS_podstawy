@@ -1,0 +1,275 @@
+Zadanie 1
+Utwórz folder zad1_a. Zainicjuj nowe repozytorium. W folderze zad1_a utwórz plik tekstowy.
+
+utwórz folder zad1_b i sklonuj repozytorium z adresu git clone https://github.com/jquery/jquery.git nie tworząc dodatkowego folderu
+Sprawdź  liczbę commitów.
+Wykorzystaj polecenia:
+git log --pretty=oneline | wc -l
+Wyświetl 5 ostatnich commitów
+Sprawdź rozmiar folderu .git i pozostałych folderów w obszarze roboczym. Co jest większe? Dlaczego?
+
+
+Zadanie2
+Sklonuj repozytorium HTML 5 boilerplate:
+https://github.com/h5bp/html5-boilerplate
+po czym usuń w nim zawartość obszaru roboczego (czyli skasuj wszystkie pliki i foldery
+oprócz folderu .git). Następnie odtwórz zawartość obszaru roboczego tak, by odpowiadała
+ostatniej rewizji.
+Następnie zmodyfikuj w projekcie kilka wybranych plików, usuń kilka plików oraz
+utwórz kilka plików. Poleceniem:
+git status
+sprawdź wprowadzone zmiany.
+Następnie odtwórz zawartość obszaru roboczego tak, by odpowiadała ostatniej rewizji.
+Zwróć uwagę, że jeżeli nie usuniesz wszystkiego przed resetem, to nowo utworzone pliki pozostają w obszarze roboczym.
+
+Zadanie 3
+Wykonaj repozytorium.
+Pracę rozpocznij od utworzenia folderu strona_www:
+mkdir strona-www
+Następnie w folderze strona_www dowolną metodą utwórz foldery i pliki 
+
+strona-www\css
+strona-www\css\style.css
+strona-www\css\js
+strona-www\css\skrypty.js
+strona-www\css\index.html
+Wszystkie pliki w ćwiczeniu mogą być puste.
+W kolejnym kroku zainicjalizuj nowe repozytorium:
+git init
+W folderze strona_www pojawił
+się folder .git.
+W celu zapisania stanu plików projektu w postaci rewizji wydaj polecenia:
+git add -A
+git commit -m "Pierwsza rewizja - a"
+W historii projektu pojawiła się pierwsza rewizja. Sprawdź to poleceniem:
+git log
+Następnie w folderze projektu (czyli w obszarze roboczym) utwórz pliki:
+
+strona-www\css\print.css
+strona-www\README
+po czym wykonaj drugą rewizję:
+git add -A
+git commit -m "Druga rewizja - b"
+Historia projektu zawiera dwie rewizje, co stwierdzisz poleceniem:
+git log --pretty=oneline
+Na zakończenie utwórz folder:
+strona-www\strony\
+zawierający pięć plików:
+strona-www\strony\strona-1.html
+strona-www\strony\strona-2.html
+strona-www\strony\strona-3.html
+strona-www\strony\strona-4.html
+strona-www\strony\strona-5.html
+i zatwierdź zmiany:
+git add -A
+git commit -m "Trzecia rewizja - c"
+Projekt zawiera teraz trzy rewizje. Polecenie:
+git log --abbrev-commit --abbrev=4 --pretty=oneline
+zwróci przykładowe wyniki:
+9cd5 Trzecia rewizja - c
+683b Druga rewizja - b
+4bf7 Pierwsza rewizja - a
+
+Zadanie 4
+Zakładając, że w repozytorium z ćwiczenia 5.1 polecenie:
+git log --abbrev-commit --abbrev=4 --pretty=oneline
+zwraca wyniki:
+9cd5 Trzecia rewizja - c
+683b Druga rewizja - b
+4bf7 Pierwsza rewizja - a
+
+przywróć stan plików w obszarze roboczym do wszystkich rewizji w kolejności od
+pierwszej do ostatniej.
+ROZWIĄZANIE
+Poleceniem:
+git branch
+sprawdź, że domyślną gałęzią jest gałąź o nazwie master.
+W celu przywrócenia stanu plików z rewizji pierwszej wydaj komendę:
+git checkout 4bf7
+Poleceniem:
+git branch
+przekonasz się, że nie jesteś już na gałęzi master. Poleceniem:
+git checkout master
+powrócisz na gałąź master. 
+Poleceniem:
+git checkout 683b
+przywróć stan plików w obszarze roboczym do drugiej rewizji.  Poleceniem:
+git branch
+przekonasz się, że nie jesteś już na gałęzi master. Poleceniem:
+git checkout master
+powrócisz na gałąź master. 
+
+zadanie 5
+Sklonuj repozytorium jQuery i przywróć je do stanu z pierwszej rewizji wykonanej
+w 2012 roku.
+Polecenie1:
+git log
+-5
+--abbrev-commit --abbrev=5
+--pretty=format:"%h %cd"
+--since="2012-01-01" --until="2012-01-15"
+generuje wydruk zawierający informacje o rewizjach wykonanych od 1 do 15 stycznia
+2012 r.:
+c0da4 Thu Jan 12 20:30:45 2012 -0500
+d8289 Thu Jan 12 20:14:51 2012 -0500
+6c8dd Thu Jan 12 20:04:17 2012 -0500
+cc5e8 Thu Jan 12 19:57:04 2012 -0500
+d0711 Wed Jan 11 22:16:30 2012 -0500
+Pierwszą rewizją z 2012 roku jest:
+d0711 Wed Jan 11 22:16:30 2012 -0500
+W celu przywrócenia plików do postaci z podanej rewizji wydajemy komendę:
+git checkout d0711
+
+Zadanie 6
+Zmień nazwę folderu strona-www/ z zadania 3 na webpage/. Następnie przenieś folder
+webpage/ z folderu głównego do dowolnego innego folderu na dysku. Poleceniami:
+git status
+git log -–pretty=oneline
+upewnij się, że przeniesienie i zmiana nazwy folderu nie mają wpływu na repozytorium.
+
+zadanie 7
+
+W folderze zad7 utwórz nowe repozytorium. W tym celu wydaj komendę:
+git init
+Następnie w folderze zad7 utwórz trzy pliki (ich zawartość może być dowolna
+— mogą to być pliki puste):
+lorem.txt
+ipsum.txt
+dolor.txt
+Teraz wydaj komendę:
+git status
+Wygenerowana odpowiedź:
+# Untracked files:
+# (use "git add <file>..." to include in what will be committed)
+#
+# dolor.txt
+# ipsum.txt
+# lorem.txt
+nothing added to commit but untracked files present (use "git add" to track)
+zawiera informację, że w folderach znajdują się trzy pliki, które są w stanie nieśledzony
+(ang. untracked file).
+
+Teraz zmieniamy stan pliku lorem.txt z nieśledzonego na zaindeksowany:
+git add lorem.txt
+Teraz wydaj komendę:
+git status
+Wykonajmy rewizję:
+git commit -m "Pierwszy"
+Spowoduje ona zapamiętanie w repozytorium stanu wyłącznie jednego pliku: lorem.txt.
+Plik lorem.txt stanie się po tej operacji aktualny. Komenda git status -s zwróci informacje
+o dwóch niezapisanych plikach, pomijając aktualny plik lorem.txt:
+?? ipsum.txt
+?? dolor.txt
+Dodajmy pozostałe dwa pliki do repozytorium w postaci jednej rewizji:
+git add -A
+git commit -m "Drugi"
+Teraz komenda git status zwróci informację, że wszystkie pliki są aktualne (ang.
+nothing to commit — nic do zatwierdzenia).
+Sprawdźmy historię projektu:
+git log
+W repozytorium występują dwie rewizje.
+
+Zmodyfikuj plik lorem.txt. Wprowadź w nim dowolny tekst, np. Lorem ipsum. 
+Teraz wydaj komendę:
+git status
+Plik lorem.txt jest teraz niezaindeksowany — nie zostanie więc uwzględniony w kolejnej
+operacji git commit.
+Pliki, które były aktualne, lecz zostały zmodyfikowane, stają się plikami niezaindeksowanymi.
+Jeśli teraz wydasz komendę git commit (bez parametru -a):
+git commit -m "Trzeci"
+rewizja nie zostanie wykonana. Ujrzysz jedynie komunikat identyczny jak po wydaniu
+polecenia git status, informujący o tym, że w projekcie nie wprowadzono zmian.
+W celu zapisania w repozytorium zmodyfikowanego pliku lorem.txt należy wydać polecenie
+git commit z parametrem -a:
+git commit –a -m "Trzeci"
+Ten sam skutek osiągniemy, wydając dwie komendy:
+git add lorem.txt
+git commit -m "Trzeci"
+lub dwie komendy:
+git add .
+git commit -m "Trzeci"
+Komenda git status -s zwraca pusty wynik i w ten sposób upewnia nas, że wszystkie
+pliki są zapisane w repozytorium. Wydajmy teraz polecenie:
+git rm lorem.txt
+Spowoduje ono usunięcie pliku z obszaru roboczego oraz z repozytorium.
+Teraz wydaj komendę:
+git status
+Komunikat:
+deleted: lorem.txt
+informuje nas, że plik został usunięty z obszaru roboczego oraz że podczas kolejnej
+operacji zatwierdzania zostanie usunięty z repozytorium.
+Po wykonaniu polecenia:
+git commit -m "Czwarty"
+stan repozytorium bez pliku lorem.txt zostanie zatwierdzony.
+Na zakończenie, stosując standardowe operacje eksploratora, usuń plik ipsum.txt. Jeśli
+wydasz polecenie:
+git status –s
+to przekonasz się, że stan pliku jest oznaczony jako _D (tj. spacjaD):
+_D lorem.txt
+W takiej sytuacji operacja:
+git commit -m "Czwarty"
+(zwróć uwagę na brak parametru –a) nie powiedzie się. Do zatwierdzenia usuwania
+pliku standardowymi operacjami plikowymi konieczny jest parametr –a polecenia git
+commit, wydanie polecenia git rm lub wydanie polecenia git add z parametrem --all.
+W celu zatwierdzenia zmiany wydaj polecenie:
+git commit –a -m "Piąty"
+
+Zadanie 8
+
+W folderze zad8 utwórz nowe repozytorium:
+git init
+Następnie utwórz pliki:
+config/user.cfg
+config.ini
+Teraz wydaj komendę:
+git status -s
+Wygenerowana odpowiedź będzie zawierała informację, że plik config.ini oraz folder
+config/ są nieśledzone2:
+?? config.ini
+?? config/
+W pliku .git/info/exclude dodaj na końcu wiersz zawierający regułę:
+/config
+Komenda:
+git status -s
+zwróci teraz informację, że tylko jeden plik nie jest śledzony:
+?? config.ini
+Następnie w folderze projektu utwórz plik .gitignore i wydaj polecenie:
+git status -s
+Teraz dwa pliki nie są śledzone:
+?? .gitignore
+?? config.ini
+Po wprowadzeniu w pliku .gitignore reguły:
+config.ini
+polecenie:
+git status -s
+zwróci informację, że tylko plik .gitignore nie jest śledzony:
+?? .gitignore
+Zatwierdźmy wykonane zmiany:
+git add -A
+git commit -m "..."
+Teraz wszystkie śledzone pliki są aktualne. Zmodyfikuj zawartość plików:
+config/user.cfg
+config.ini
+Pomimo tego, że pliki zostały zmodyfikowane, polecenie:
+git status -s
+zwróci pusty wynik.
+
+Zadanie 9
+W folderze zad9 utwórz nowe repozytorium. W tym celu wydaj komendę:
+git init
+Następnie w folderze zad9 utwórz trzy pliki (ich zawartość może być dowolna
+— mogą to być pliki puste):
+lorem.txt
+ipsum.txt
+Dodaj pliki do repozytorium i wykonaj commit.
+Następnie utwórz plik
+dolor.txt
+Dodaj pliki do repozytorium i wykonaj commit.
+Następnie utwórz plik
+zupa.txt
+Dodaj pliki do repozytorium i wykonaj commit.
+Wykonaj polecenie git log.
+Powinny być trzy commity.
+Cofnij ostatni commit za pomocą polecenia git revert.
+Wykonaj polecenie git log.
+Powinny być cztery commity.
