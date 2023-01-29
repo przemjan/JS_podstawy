@@ -103,8 +103,7 @@ zadanie 5
 Sklonuj repozytorium jQuery i przywróć je do stanu z pierwszej rewizji wykonanej
 w 2012 roku.
 Polecenie1:
-git log
--5
+git log -5
 --abbrev-commit --abbrev=5
 --pretty=format:"%h %cd"
 --since="2012-01-01" --until="2012-01-15"
