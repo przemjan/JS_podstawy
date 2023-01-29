@@ -71,7 +71,7 @@ zwróci przykładowe wyniki:
 4bf7 Pierwsza rewizja - a
 
 Zadanie 4
-Zakładając, że w repozytorium z ćwiczenia 5.1 polecenie:
+Zakładając, że w repozytorium zadania 3 polecenie:
 git log --abbrev-commit --abbrev=4 --pretty=oneline
 zwraca wyniki:
 9cd5 Trzecia rewizja - c
